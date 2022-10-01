@@ -77,15 +77,19 @@ $students = [
 ];
 
 foreach($students as $student){
-    echo "<tr>";
-    foreach($student as $i=>$x){
-        echo   "<td>".$x."</td>";
-        
+        if($student['status'] == 'PHP'){
+            echo "<tr>
+            <td>". $student['name']."</td> .<td>". $student['email']."</td>.<td style='color:red;'>". $student['status']."</td>  ";        
+    }    else{
+        echo "<tr>";
+        echo "<td>".$student['name']."</td>";
+        echo "<td>".$student['email']."</td>";
+        echo "<td>".$student['status']."</td>";
+        echo "</tr>";
     }
-    
 }
 
-echo "</tr></table>";
+echo "</table>";
 ?>
 
 <style>
