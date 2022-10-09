@@ -6,7 +6,7 @@ include("header.php");
  $id = $_GET['id'];
  $qry = mysqli_query($connection,"SELECT * FROM user WHERE id='$id'"); 
  $row = mysqli_fetch_array($qry); 
- if(isset($_POST['update'])) // when click on Update button
+ if(isset($_POST['update']))
  {
     $name = $_POST['name'];
     $email = $_POST['email'];
