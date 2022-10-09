@@ -46,7 +46,7 @@ include("header.php");
 </div>
     </div>
     <div class="form-check mt-5">
-  <input class="form-check-input" type="checkbox" value="<?php if(isset($status))echo 'Yes';else{ echo 'No' ;} ?>" id="flexCheckDefault" name="status">
+  <input class="form-check-input" type="checkbox" value="Yes" id="flexCheckDefault" name="status">
   <label class="mx-2 form-check-label"  for="flexCheckDefault">
     Recieve emails from us
   </label>
@@ -68,7 +68,12 @@ if(isset($_POST["submit"])){
     $name = $_POST['name'];
     $email = $_POST['email'];
     $gender = $_POST['gender'];
-    $status = $_POST['status'];
+    if (array_key_exists('status', $_POST)) {
+      $status = "Yes";
+  }else{
+      $status = "No";
+  }
+
 
     $sql = "INSERT INTO user (name,email,gender,message) VALUES ('$name','$email','$gender','$status') ";
 

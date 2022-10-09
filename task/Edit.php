@@ -11,8 +11,11 @@ include("header.php");
     $name = $_POST['name'];
     $email = $_POST['email'];
     $gender = $_POST['gender'];
-    $status = $_POST['message'];
-    
+    if (array_key_exists('status', $_POST)) {
+      $status = "Yes";
+  }else{
+      $status = "No";
+  }    
     $sql = "UPDATE user SET name='$name',email = '$email',gender ='$gender',message ='$status' WHERE id='$id'";
    
      
