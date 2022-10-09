@@ -54,7 +54,7 @@ include("header.php");
     <div class="row col-10">
         <div class="col-3">
     <div class="form-check">
-  <input value="<?php echo $row['gender']?>" class="form-check-input" value="M" type="radio" name="gender" id="flexRadioDefault1">
+  <input <?php if($row['gender']=="M"){ echo "checked";} ?> class="form-check-input" value="M" type="radio" name="gender" id="flexRadioDefault1">
   <label class="form-check-label" for="flexRadioDefault1">
     Male
   </label>
@@ -62,7 +62,7 @@ include("header.php");
 </div>
 <div class="col-3">
 <div class="form-check">
-     <input value="<?php echo $row['gender']; ?>" <?php if($row['gender']== "female" ) echo "checked"; ?> class="form-check-input" type="radio" value="F" name="gender" id="flexRadioDefault1">
+     <input <?php if($row['gender']=="F"){ echo "checked";} ?> class="form-check-input" type="radio" value="F" name="gender" id="flexRadioDefault1">
   <label class="form-check-label" for="flexRadioDefault1">
     Female
   </label>
@@ -71,7 +71,7 @@ include("header.php");
 </div>
     </div>
     <div class="form-check mt-5">
-  <input value="<?php echo $row['message']?>" class="form-check-input" type="checkbox" value="Yes" id="flexCheckDefault" name="status">
+  <input <?php if($row['message']=="Yes"){ echo "checked";} ?> value="Yes" class="form-check-input" type="checkbox" value="Yes" id="flexCheckDefault" name="status">
   <label class="mx-2 form-check-label"  for="flexCheckDefault">
     Recieve emails from us
   </label>

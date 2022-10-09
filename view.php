@@ -27,7 +27,6 @@ include("header.php");
         <td><?php echo $row['gender']?></td>
         <td><?php echo $row['message']?></td>
         <td>
-            <a href="view.php?id=<?php echo $row['id']; ?>" class="btn btn-primary">View</a>
             <a href="edit.php?id=<?php echo $row['id']; ?>" class="btn btn-success">Edit</a>           
             <a href="delete.php?id=<?php echo $row['id']; ?>" class="btn btn-danger">Delete</a>
         </td>
